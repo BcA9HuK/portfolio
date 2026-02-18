@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио</title>
+    <link rel="icon" href="../media/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка сайта -->
+        <header class="header site-header">
+            <div class="header-top">
+                <div class="lang-switcher">
+                    <button id="langToggle" class="lang-toggle" type="button" aria-label="Switch language">
+                        <span id="langToggleLabel">RU</span>
+                    </button>
+                </div>
+                <nav class="main-nav" aria-label="Основная навигация">
+                    <a href="#about" class="nav-link" data-i18n="nav.about">Обо мне</a>
+                    <a href="#skills" class="nav-link" data-i18n="nav.skills">Что я использую</a>
+                    <a href="#projects" class="nav-link" data-i18n="nav.projects">Проекты</a>
+                    <a href="#hobby" class="nav-link" data-i18n="nav.hobby">Хобби</a>
+                    <a href="#contacts" class="nav-link" data-i18n="nav.contacts">Контакты</a>
+                </nav>
+                <div class="theme-switcher" aria-label="Переключение темы">
+                    <!-- Mobile: компактная кнопка (🌙), раскрывает список тем -->
+                    <button id="mobileThemeToggle" class="theme-toggle-btn" type="button" aria-label="Theme" aria-expanded="false">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path>
+                        </svg>
+                    </button>
+                    <!-- Селект оставляем для доступности/мобилок, визуально скрываем -->
+                    <select id="themeSelect" class="theme-select sr-only" aria-label="Выбор темы">
+                        <option value="neon">Neon</option>
+                        <option value="minimal">Minimal</option>
+                        <option value="noir" selected>Noir</option>
+                        <option value="sunset">Sunset</option>
+                    </select>
+                    <div class="theme-pills" role="radiogroup" aria-label="Темы оформления">
+                        <button class="theme-pill" type="button" data-theme="neon" aria-pressed="false" aria-label="Тема Neon" title="Neon">
+                            <span class="theme-swatch swatch-neon" aria-hidden="true"></span>
+                        </button>
+                        <button class="theme-pill" type="button" data-theme="minimal" aria-pressed="false" aria-label="Тема Minimal" title="Minimal">
+                            <span class="theme-swatch swatch-minimal" aria-hidden="true"></span>
+                        </button>
+                        <button class="theme-pill" type="button" data-theme="noir" aria-pressed="false" aria-label="Тема Noir" title="Noir">
+                            <span class="theme-swatch swatch-noir" aria-hidden="true"></span>
+                        </button>
+                        <button class="theme-pill" type="button" data-theme="sunset" aria-pressed="false" aria-label="Тема Sunset" title="Sunset">
+                            <span class="theme-swatch swatch-sunset" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile: бургер -->
+                <button id="burgerToggle" class="burger-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <line x1="4" y1="6" x2="20" y2="6"></line>
+                        <line x1="4" y1="12" x2="20" y2="12"></line>
+                        <line x1="4" y1="18" x2="20" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile menu overlay -->
+            <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+                <div class="mobile-menu-backdrop" data-mobile-menu-close></div>
+                <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Меню">
+                    <nav class="mobile-nav" aria-label="Мобильная навигация">
+                        <a href="#about" class="mobile-nav-link" data-i18n="nav.about">Обо мне</a>
+                        <a href="#skills" class="mobile-nav-link" data-i18n="nav.skills">Что я использую</a>
+                        <a href="#projects" class="mobile-nav-link" data-i18n="nav.projects">Проекты</a>
+                        <a href="#hobby" class="mobile-nav-link" data-i18n="nav.hobby">Хобби</a>
+                        <a href="#contacts" class="mobile-nav-link" data-i18n="nav.contacts">Контакты</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <!-- Hero блок с именем и описанием -->
+            <section id="about" class="section section-hero">
+                <div class="hero-block">
+                    <span class="brand-tag" data-i18n="hero.tag">Портфолио</span>
+                    <h1 class="hero-title">Владислав</h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">Начинающий Frontend разработчик, который любит красивые интерфейсы и живые продукты.</p>
+                </div>
+            </section>
+
+            <!-- Блок "Обо мне" -->
+            <section class="section section-about">
+                <div class="section-card about-card">
+                    <h2 class="section-title" data-i18n="about.title">Обо мне</h2>
+                    <p class="section-text" data-i18n="about.text" data-i18n-type="html">
+                        Окончил Хакасскикий государственный университет имени Н.Ф. Катанова по специальности "Информационные системы и технологии" в 2023 году.
+                        Интерес к frontend-разработке сформировался во время обучения в университете. В рамках выпускной квалификационной работы разработал корпоративный сайт
+                        для ВОИ Абаза. <br> Сейчас развиваюсь через pet-проекты и практические задачи, делая акцент на UI и удобство пользователя.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Блок "Навыки" -->
+            <section id="skills" class="section section-skills">
+                <div class="section-card skills-card">
+                    <h2 class="section-title" data-i18n="skills.title">Что я использую</h2>
+                    <div class="skills-grid">
+                        <div class="skill-group">
+                            <h3 class="skill-title" data-i18n="skills.frontendTitle">Frontend</h3>
+                            <p class="section-text" data-i18n="skills.frontendText">HTML, CSS, JavaScript</p>
+                        </div>
+                        <div class="skill-group">
+                            <h3 class="skill-title" data-i18n="skills.toolsTitle">Инструменты</h3>
+                            <p class="section-text" data-i18n="skills.toolsText">Git(базово), GitHub Pages, Figma, WordPress</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Блок "Проекты" с монитором -->
+            <section id="projects" class="section section-projects">
+                <h2 class="section-title" data-i18n="projects.title">Проекты</h2>
+                <p class="section-text section-text-muted" data-i18n="projects.subtitle">Исследуйте мои работы в интерактивном мониторе.</p>
+                <div class="monitor-wrapper">
+            <!-- Навигация по проектам слева -->
+            <div class="projects-nav">
+                <div class="projects-nav-row projects-nav-row--primary">
+                    <button class="nav-btn prev-btn" id="prevBtn" aria-label="Предыдущий проект">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+
+                    <!-- Mobile: выбор проекта -->
+                    <button class="project-picker-btn" id="projectPickerBtn" type="button" aria-haspopup="dialog" aria-expanded="false">
+                        <span class="project-picker-label" id="projectPickerLabel">Проекты</span>
+                        <svg class="project-picker-caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M6 9l6 6 6-6"></path>
+                        </svg>
+                    </button>
+
+                    <button class="nav-btn next-btn" id="nextBtn" aria-label="Следующий проект">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="projects-nav-row projects-nav-row--actions">
+                    <!-- Mobile: Подробнее -->
+                    <button class="project-details-btn" id="projectDetailsBtn" type="button" aria-haspopup="dialog" aria-expanded="false">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="10" x2="12" y2="16"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <span data-i18n="projects.details">Подробнее</span>
+                    </button>
+
+                    <!-- Mobile: отдельная кнопка открытия текущего проекта -->
+                    <a class="project-open-btn hidden" id="projectOpenBtn" href="#" target="_blank" rel="noreferrer">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                        <span data-i18n="projects.openExternal">Открыть в новой вкладке</span>
+                    </a>
+                </div>
+                
+                <div class="projects-list" id="projectsList">
+                    <!-- Проекты будут добавлены через JavaScript -->
+                </div>
+                
+            </div>
+
+            <!-- Mobile: drawer со списком проектов -->
+            <div class="projects-drawer" id="projectsDrawer" aria-hidden="true">
+                <div class="projects-drawer-backdrop" data-projects-drawer-close></div>
+                <div class="projects-drawer-panel" role="dialog" aria-modal="true" aria-label="Проекты">
+                    <div class="projects-drawer-title" data-i18n="projects.title">Проекты</div>
+                    <div class="projects-drawer-list" id="projectsDrawerList"></div>
+                </div>
+            </div>
+
+            <!-- Mobile: drawer с описанием проекта -->
+            <div class="project-details-drawer" id="projectDetailsDrawer" aria-hidden="true">
+                <div class="project-details-backdrop" data-project-details-close></div>
+                <div class="project-details-panel" role="dialog" aria-modal="true" aria-label="Project details">
+                    <div class="project-details-title" id="projectDetailsTitle"></div>
+                    <div class="project-details-content" id="projectDetailsContent"></div>
+                </div>
+            </div>
+
+            <!-- Монитор справа -->
+            <div class="monitor-container">
+                <div class="monitor">
+                <!-- Экран монитора -->
+                <div class="monitor-screen-wrapper">
+                    <div class="monitor-screen" id="monitorScreen">
+                        <div class="screen-off-overlay" id="screenOffOverlay"></div>
+                        <!-- Статус‑бар телефона (виден только в мобильном phone‑mode) -->
+                        <div class="phone-status-bar" aria-hidden="true">
+                            <div class="phone-status-left">
+                                <span class="phone-status-time">9:41</span>
+                            </div>
+                            <div class="phone-status-right" aria-hidden="true">
+                                <span class="phone-status-signal"></span>
+                                <span class="phone-status-wifi"></span>
+                                <span class="phone-status-battery"></span>
+                            </div>
+                        </div>
+                        <div class="screen-content">
+                            <iframe 
+                                id="projectFrame" 
+                                src="" 
+                                frameborder="0"
+                                title="Предпросмотр проекта"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                            <div class="loading-overlay" id="loadingOverlay">
+                                <div class="spinner"></div>
+                                <p data-i18n="projects.loading">Загрузка проекта...</p>
+                            </div>
+                            <div class="error-overlay hidden" id="errorOverlay">
+                                <div class="error-icon">⚠️</div>
+                                <h3 data-i18n="projects.errorTitle">Сайт не может быть загружен в iframe</h3>
+                                <p data-i18n="projects.errorText">Этот сайт использует защиту от встраивания. Откройте его в новой вкладке.</p>
+                                <a href="#" target="_blank" class="open-external-btn" id="openExternalBtn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                    <span data-i18n="projects.openExternal">Открыть в новой вкладке</span>
+                                </a>
+                            </div>
+                            <div class="screenshot-overlay hidden" id="screenshotOverlay">
+                                <div class="media-container" id="mediaContainer"></div>
+                                <div class="media-nav" id="mediaNav">
+                                    <button class="media-nav-btn" id="mediaPrevBtn" aria-label="Предыдущий медиафайл">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M15 18l-6-6 6-6"/>
+                                        </svg>
+                                    </button>
+                                    <div class="media-counter" id="mediaCounter">1 / 1</div>
+                                    <button class="media-nav-btn" id="mediaNextBtn" aria-label="Следующий медиафайл">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 18l6-6-6-6"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Нижняя рамка (подбородок) с кнопкой питания -->
+                    <div class="monitor-chin">
+                        <div class="monitor-bezel"></div>
+                        <button class="power-btn" id="powerBtn" aria-label="Включить/выключить монитор" title="Включить/выключить монитор">
+                            <svg class="power-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+                                <line x1="12" y1="2" x2="12" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Нижняя часть монитора (подставка в стиле Apple) -->
+                <div class="monitor-stand">
+                    <div class="stand-neck"></div>
+                    <div class="stand-base"></div>
+                </div>
+            </div>
+                </div>
+            </section>
+
+            <!-- Блок "Хобби" -->
+            <section id="hobby" class="section section-hobby">
+                <div class="section-card hobby-card">
+                    <h2 class="section-title" data-i18n="hobby.title">Хобби</h2>
+                    <p class="section-text" data-i18n="hobby.text" data-i18n-type="html">
+                        Интересуюсь современными технологиями и развитием ИИ, слежу за трендами в вебе и цифровых продуктах.
+                        В свободное время смотрю аниме, веду стримы на Twitch и делаю видео для YouTube — это помогает развивать насмотренность, коммуникацию и понимание аудитории.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Блок "Контакты" -->
+            <section id="contacts" class="section section-contacts">
+                <div class="section-card contacts-card">
+                    <h2 class="section-title" data-i18n="contacts.title">Контакты</h2>
+                    <div class="contacts-grid" aria-label="Контакты">
+                        <a class="contact-item contact-item--telegram" href="https://t.me/BcA9HuK" target="_blank" rel="noreferrer" aria-label="Написать в Telegram">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="contact-icon-svg">
+                                    <title>Telegram</title>
+                                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                                </svg>
+                            </span>
+                            <span class="contact-label" data-i18n="contacts.telegram">Telegram</span>
+                        </a>
+
+                        <a class="contact-item contact-item--mail" href="mailto:vlad.samsonov011@mail.ru" aria-label="Написать на email">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg class="contact-icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 18V8.24l7.4 6.17a2 2 0 0 0 2.4 0L20 8.24V18H4Z"></path>
+                                </svg>
+                            </span>
+                            <span class="contact-label" data-i18n="contacts.email">Email</span>
+                        </a>
+
+                        <a class="contact-item contact-item--github" href="https://github.com/BcA9HuK" target="_blank" rel="noreferrer" aria-label="Профиль на GitHub">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="contact-icon-svg">
+                                    <title>GitHub</title>
+                                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                                </svg>
+                            </span>
+                            <span class="contact-label" data-i18n="contacts.github">GitHub</span>
+                        </a>
+
+                        <a class="contact-item contact-item--twitch" href="https://twitch.tv/bca9huk" target="_blank" rel="noreferrer" aria-label="Канал на Twitch">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="contact-icon-svg">
+                                    <title>Twitch</title>
+                                    <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/>
+                                </svg>
+                            </span>
+                            <span class="contact-label" data-i18n="contacts.twitch">Twitch</span>
+                        </a>
+
+                        <a class="contact-item contact-item--youtube" href="https://youtube.com/@BcA9HuK" target="_blank" rel="noreferrer" aria-label="Канал на YouTube">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="contact-icon-svg">
+                                    <title>YouTube</title>
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </span>
+                            <span class="contact-label" data-i18n="contacts.youtube">YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Кнопка прокрутки наверх -->
+    <button class="scroll-top-btn" id="scrollTopBtn" type="button" aria-label="Прокрутить страницу наверх">
+        <svg class="scroll-top-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 4l-7 7h4v7h6v-7h4z" />
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
