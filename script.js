@@ -2,6 +2,14 @@
 const projects = [
     {
         id: 1,
+        title: "ImageShare",
+        description: 'Сервис для загрузки и обмена изображениями и GIF. Пользователи могут публиковать изображения, управлять приватностью постов, делиться ссылками и просматривать ленту изображений сообщества. <p><strong>Стек:</strong></p><ul><li>Next.js (App Router), Tailwind CSS - Frontend</li><li>Next.js API Routes, NextAuth.js (Credentials + Google OAuth), JWT сессии - Backend</li><li>Sanity - База данных</li><li>bcrypt - хеширование паролей</li><li>Middleaware - защита приватных постов</li><li>Vercel, GitHub - деплой</li></ul>',
+        url: "https://image-sharing-service.vercel.app",
+        screenshot: null, // Путь к скриншоту (опционально), например: "media/anime-list/anime-list.jpg"
+        themeKey: "theme-project1" // Уникальный ключ для темы этого проекта
+    },
+    {
+        id: 2,
         title: "Anime List",
         description: 'Веб-приложение для отображения личной библиотеки аниме с Shikimori, манги, фильмов с красивым современным интерфейсом. <p><strong>Стек:</strong></p> <ul><li>JavaScript 72.4%</li><li>CSS 19.3%</li><li>HTML 8.3%</li><li>Shikimori API</li><li>CSV data source (Google Sheets)</li></ul><p class="project-note">P.S.: Могут возникнуть проблемы с загрузкой контента в РФ в связи с блокировкой API Shikimori от РКН.</p>',
         url: "https://bca9huk.github.io/animeList/index.html",
@@ -9,7 +17,7 @@ const projects = [
         themeKey: "theme-animeList" // Уникальный ключ для темы этого проекта
     },
     {
-        id: 2,
+        id: 3,
         title: "AnimeQuiz",
         description: 'AniQuiz - это интерактивная платформа для проверки знаний об аниме.<p><strong>Стек:</strong></p> <ul><li>JavaScript 53.8%</li><li>HTML 30.5%</li><li>CSS 15.7%</ul>',
         url: "https://bca9huk.github.io/nAnimeQuiz/",
@@ -17,7 +25,7 @@ const projects = [
         themeKey: "theme-animeQuiz"
     },
     {
-        id: 3,
+        id: 4,
         title: "Puzzle Generator",
         description: 'Создавайте пазлы с классическими и абстрактными формами кусочков.<p><strong>Стек:</strong></p> <ul><li><strong>Frontend:</strong> React 19, TypeScript, Tailwind CSS</li><li><strong>Сборка:</strong> Vite</li><li><strong>Иконки:</strong> Lucide React</li><li><strong>Canvas API</strong> для генерации пазлов</li></ul>',
         url: "https://bca9huk.github.io/puzzle-generator4/",
@@ -25,7 +33,7 @@ const projects = [
         themeKey: "theme-project3"
     },
     {
-        id: 4,
+        id: 5,
         title: "ВОИ Абаза",
         description: 'Сайт, разработанный в рамках выпускной квалификационной работы в 2023 году, для ВОИ Абаза.<p><strong>Стек:</strong></p><ul><li><strong>CMS:</strong> WordPress</li><li><strong>Тема:</strong> Astra (конструктор блоков)</li><li><strong>Плагины:</strong> формы обратной связи, часы работы, версия для слабовидящих, просмотр PDF</li><li><strong>Интеграции:</strong> Яндекс карты, Яндекс календарь (шорткоды)</li></ul><p class="project-note">Проект доступен в виде скриншотов и демо-ролика.</p>',
         url: null,
@@ -41,7 +49,7 @@ const projects = [
         themeKey: null
     },
     {
-        id: 5,
+        id: 6,
         title: "GameLib",
         description: 'Сайт, разработанный в рамках курса "Программная инженерия" в 2022 году, для ведения своей библиотеки пройденных игр.<p><strong>Стек:</strong></p><ul><li><strong>CMS:</strong> WordPress</li><li><strong>Тема:</strong> Astra (конструктор блоков)</li><li><strong>Пользователи:</strong> регистрация, авторизация, роли</li><li><strong>Данные:</strong> пользовательские списки игр</li><li><strong>Интерактив:</strong> оценки, кастомизация профиля</li></ul><p class="project-note">Проект доступен в виде скриншотов и демо-ролика.</p>',
         url: null,
@@ -103,7 +111,7 @@ const translations = {
         'skills.frontendTitle': 'Frontend',
         'skills.frontendText': 'HTML, CSS, JavaScript',
         'skills.toolsTitle': 'Инструменты',
-        'skills.toolsText': 'Git(базово), GitHub Pages, Figma, WordPress, Sanity, AI(Cursor, Kiro, GPT)',
+        'skills.toolsText': 'Git(базово), GitHub Pages, Figma, WordPress',
         'projects.title': 'Проекты',
         'projects.subtitle': 'Исследуйте мои работы в интерактивном мониторе.',
         'projects.loading': 'Загрузка проекта...',
@@ -137,7 +145,7 @@ const translations = {
         'skills.frontendTitle': 'Frontend',
         'skills.frontendText': 'HTML, CSS, JavaScript',
         'skills.toolsTitle': 'Tools',
-        'skills.toolsText': 'Git (basic), GitHub Pages, Figma, WordPress, Sanity, AI(Cursor, Kiro, GPT)',
+        'skills.toolsText': 'Git (basic), GitHub Pages, Figma, WordPress',
         'projects.title': 'Projects',
         'projects.subtitle': 'Explore my work inside the interactive monitor.',
         'projects.loading': 'Loading project…',
