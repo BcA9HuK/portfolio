@@ -3,7 +3,7 @@ const projects = [
     {
         id: 1,
         title: "ImageShare",
-        description: 'Сервис для загрузки и обмена изображениями и GIF. Пользователи могут публиковать изображения, управлять приватностью постов, делиться ссылками и просматривать ленту изображений сообщества. <p><strong>Стек:</strong></p><ul><li>Next.js (App Router), Tailwind CSS - Frontend</li><li>Next.js API Routes, NextAuth.js (Credentials + Google OAuth), JWT сессии - Backend</li><li>Sanity - База данных</li><li>bcrypt - хеширование паролей</li><li>Middleaware - защита приватных постов</li><li>Vercel, GitHub - деплой</li></ul>',
+        description: 'Сервис для загрузки и обмена изображениями и GIF. Пользователи могут публиковать изображения, управлять приватностью постов, делиться ссылками и просматривать ленту изображений сообщества. <p><strong>Стек:</strong></p><ul><li><strong>Frontend: </strong>Next.js (App Router), Tailwind CSS</li><li><strong>Backend: </strong>Next.js API Routes, NextAuth.js (Credentials + Google OAuth), JWT сессии</li><li><strong>База данных: </strong>Sanity</li><li><strong>Хеширование паролей: </strong>bcrypt</li><li><strong>Защита приватных постов: </strong>Middleaware</li><li><strong>Деплой: </strong>Vercel, GitHub</li></ul>',
         url: "https://image-sharing-service.vercel.app",
         screenshot: null, // Путь к скриншоту (опционально), например: "media/anime-list/anime-list.jpg"
         themeKey: "theme-project1" // Уникальный ключ для темы этого проекта
